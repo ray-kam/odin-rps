@@ -17,28 +17,44 @@
 
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
-                return `It's a draw! Both played ${playerSelection}`
+                    return `It's a draw! Both played ${playerSelection}`
             } else {
                 if (playerSelection = 'rock', computerSelection = 'paper') {
                     return 'You lose! Paper beats rock!'
-                } else {
-                    if (playerSelection = 'paper', computerSelection = 'rock') {
-                        return 'You lose! Scissors beat paper!'
-                    } else {
-                        if (playerSelection = 'scissors', computerSelection = 'rock') {
-                            return 'You lose! Rock beats scissors'
-                        } else {
-                            return `You win! ${playerSelection} beats ${computerSelection}!`
+            } else {
+                if (playerSelection = 'paper', computerSelection = 'rock') {
+                    return 'You lose! Scissors beat paper!'
+            } else {
+                if (playerSelection = 'scissors', computerSelection = 'rock') {
+                    return 'You lose! Rock beats scissors'
+            } else {
+                    return `You win! ${playerSelection} beats ${computerSelection}!`
                         }
                     }
                 }
             }
         }
 
-        const playerSelection = 'rock';
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection))
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Rock, paper, scissors?");
+                let computerSelection = getComputerChoice();
+                playRound();
+                console.log(playRound(playerSelection, computerSelection))
+            } 
+        }
+
+        game();
+
     </script>
 </body>
 
 </html>
+
+<!-- user inputs choice
+    loop it 5 times
+    computer makes selection and plays game
+    console.log the result
+    increment score by 1
+    output total score/winner by end of 5 rounds
+ -->
