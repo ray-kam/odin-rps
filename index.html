@@ -20,18 +20,14 @@
 
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
-                    playerScore += 1; 
                     return `It's a draw! Both played ${playerSelection}`
-            } else {
-                if (playerSelection = 'rock', computerSelection = 'paper') {
+            } else if (playerSelection == 'rock' && computerSelection == 'paper') {
                     computerScore += 1;
                     return 'You lose! Paper beats rock!'
-            } else {
-                if (playerSelection = 'paper', computerSelection = 'rock') {
+            } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
                     computerScore += 1;
                     return 'You lose! Scissors beat paper!'
-            } else {
-                if (playerSelection = 'scissors', computerSelection = 'rock') {
+            } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
                     computerScore += 1;
                     return 'You lose! Rock beats scissors'
             } else {
@@ -39,31 +35,33 @@
                     return `You win! ${playerSelection} beats ${computerSelection}!`
                         }
                     }
-                }
+                
+        function winner () {
+            if(playerScore > computerScore) {
+                console.log(`You win! ${playerScore} to ${computerScore}!`)
+            } else if (playerScore < computerScore) {
+                console.log(`Computer wins! ${computerScore} to ${playerScore}`)
+            } else if (playerScore == computerScore) {
+                console.log("It's a draw!")
             }
         }
+        
 
         function game() {
             for (let i = 0; i < 5; i++) {
                 let playerSelection = prompt("Rock, paper, scissors?");
                 let computerSelection = getComputerChoice();
                 playRound();
-                console.log(`Current score: Player - ${playerScore} | Computer - ${computerScore}`)
                 console.log(playRound(playerSelection, computerSelection))
+                console.log(`Current score: Player - ${playerScore} | Computer - ${computerScore}`)
             } 
         }
 
         game();
+        winner();
 
     </script>
 </body>
 
 </html>
 
-<!-- user inputs choice
-    loop it 5 times
-    computer makes selection and plays game
-    console.log the result
-    increment score by 1
-    output total score/winner by end of 5 rounds
- -->
